@@ -16,7 +16,7 @@
 
  - 在此解决方案中一次生成一个项目。若要启用并行生成，请添加“/m”开关  
  - MSBUILD : error MSB3428: 未能加载 Visual C++ 组件“VCBuild.exe”  
- - 要解决此问题<br />  
+ - 要解决此问题<br />
 	1) 安装 .NET Fram ework 2.0 SDK  
 	2) 安装 Microsoft Visual Studio 2005   
 	3) 如果将该组件安装到了其他位置，请将其位置添加到系统路径中  
