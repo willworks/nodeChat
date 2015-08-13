@@ -12,9 +12,8 @@
 
 ---
 
-## error  
+# error  
 
- - ![image](https://github.com/willworks/nodeChat/raw/master/README/error.png)  
  - 在此解决方案中一次生成一个项目。若要启用并行生成，请添加“/m”开关  
  - MSBUILD : error MSB3428: 未能加载 Visual C++ 组件“VCBuild.exe”  
  - 要解决此问题<br />  
@@ -24,7 +23,7 @@
 
 ---
 
-## reason    
+# reason    
 
  - my point was that you don't need Visual Studio 2005 -- the message about the .NET Framework 2 SDK is misleading  
    You just need MSBuild and the C++ compiler, which come along with the Windows SDK I gave you the link to (or by installing a later version of Visual Studio that work on Win8) http://msdn.microsoft.com/en-us/windows/desktop/hh852363.aspx  
@@ -33,8 +32,7 @@
  - This looks like an issue with building socket.io, specifically the ws package that it depends on, based on the log.However, this is more of a core Node / gyp issue anyhow.. and I think the error message may be a red herring. You should just be able to install the Windows SDK from here and you'll be good to go  
  - 参考github：https://github.com/karma-runner/karma/issues/536  
  - 所以最终可能的问题是socket.io需要重新用node-gyp编译，而node-gyp依赖于python和msvc和msframeworks  
- - 安装node-gyp环境要求 (https://github.com/TooTallNate/node-gyp/blob/master/README.md) 
- - ![image](https://github.com/willworks/nodeChat/raw/master/README/require.png)  
+ - 安装node-gyp环境要求 https://github.com/TooTallNate/node-gyp/blob/master/README.md  
 
 ---
 
