@@ -5,14 +5,14 @@
 
 ---
 
-# install  
+# Install  
 
  - npm install express  
  - npm install socket.io  
 
 ---
 
-# error  
+# Error  
 
  - 在此解决方案中一次生成一个项目。若要启用并行生成，请添加“/m”开关  
  - MSBUILD : error MSB3428: 未能加载 Visual C++ 组件“VCBuild.exe”  
@@ -23,7 +23,7 @@
 
 ---
 
-# reason    
+# Reason    
 
  - my point was that you don't need Visual Studio 2005 -- the message about the .NET Framework 2 SDK is misleading  
    You just need MSBuild and the C++ compiler, which come along with the Windows SDK I gave you the link to (or by installing a later version of Visual Studio that work on Win8) http://msdn.microsoft.com/en-us/windows/desktop/hh852363.aspx  
@@ -36,3 +36,7 @@
 
 ---
 
+# Solution  
+
+ - 安装node-gyp编译必须的环境python (必须是2.7.X)  
+ - Visual Studio (不一定是错误提示里的2005)，并且强制指定：npm config set msvs_version 2012 --global  
