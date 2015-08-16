@@ -1,0 +1,71 @@
+<!-- 
+    Document   : nodeChat
+    Created on : 2015.8
+    Author     : Kevin Zhong
+    License    : MIT
+    github     : https://github.com/willworks/nodeChat/ 
+    Description: 基于node和socket.io的网页版即时聊天程序
+    Copyright (c) 2015 Kevin Zhong
+-->
+<!DOCTYPE html>
+<html>
+<!-- head -->
+<head>
+    <title>nodeChat</title>
+    <!--==================================html meta标签大集合========================================-->
+    <!-- http-equiv 属性 HTTP协议的响应头报文 --> 
+    <!--页面内容类型以及编码方式-->
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" /> 
+
+    <!-- Edge 模式告诉 IE 以最高级模式渲染文档，也就是任何 IE 版本都以当前版本所支持的最高级标准模式渲染[如content="IE=IE9,chrome=1"]，避免版本升级造成的影响。简单的说，就是什么版本 IE 就用什么版本的标准模式渲染 -->
+    <!-- Google 官方提供了对 Google Frame 插件安装情况的检测，这里直接调用方法即可，如果检测到 IE 并未安装 Google Frame，则弹出对话框提示安装。 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <!--页面语言-->
+    <meta http-equiv="content-language" content="zh-CN" /> 
+    <!--网页作者-->
+    <meta name="author" content="Kevin Zhong" />
+    <!--网页描述-->
+    <meta name="description" content="A web application for Instant messaging and chatting based on node and websocket">
+    <!--关键词-->
+    <meta name="keywords" content="node socket.io websocket"> 
+
+    <!--==================================html meta移动端优化=======================================-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <!-- 控制状态栏显示样式-->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 删除默认的苹果工具栏和菜单栏-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- telephone=no就禁止了把数字转化为拨号链接-->
+    <meta name="format-detection" content="telephone=no,email=no" />
+
+    <!--==============================引入外部CSS以及需要预先加载的js===================================-->
+    <link rel="stylesheet" type="text/css" href="css/client.css" />
+
+</head>
+<!-- END head -->
+
+<!-- body -->
+<body>
+    <div class="section-wrap">
+        <ul id="messages"></ul>
+        <form id="form" action="">
+            <input id="m" autocomplete="off" /><button>Send</button>
+        </form>
+    </div>
+    <!--=================引入外部js，由于加载js时阻塞页面渲染，故置于body底部===========================-->
+    <!-- 引入socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+    <!-- 引入jQuery -->
+    <script src="/js/client.js"></script>
+</body>
+<!-- END body -->
+</html>
+
+
+
+
+
+
+
+
+
