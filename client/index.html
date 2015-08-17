@@ -46,12 +46,16 @@
 
 <!-- body -->
 <body>
-    <div class="section-wrap">
-        <ul id="messages"></ul>
-        <form id="form" action="">
-            <input id="m" autocomplete="off" /><button>Send</button>
-        </form>
+    <div class="section-wrap section-header">
+        <div class="section">
+            
+        </div>
+        <div class="section">
+            
+        </div>
     </div>
+
+    
     <!--=================引入外部js，由于加载js时阻塞页面渲染，故置于body底部===========================-->
     <!-- 引入socket.io -->
     <script src="/socket.io/socket.io.js"></script>
@@ -62,10 +66,8 @@
 </html>
 
 
-
-
-
-
-
-
-
+.section{
+    width: 960px;
+    margin: 0 auto;
+    @extend .clearfix;
+}
