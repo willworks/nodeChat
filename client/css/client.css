@@ -1,31 +1,61 @@
-.section-wrap{
-	margin: 0;
-	padding: 0;
+/*通用样式*/
+html{
+	font:12px/1.5 tahoma,arial,sans-serif;
 }
-.section-header,.section-main,.section-footer{
-	width: 960px;
-	background-color: gray;
+input,button,select,textarea{outline:none}
+textarea{resize:none}
+
+.section-wrap {
+	position: relative;
+}
+
+.section {
+	width: 96%;
+	max-width: 960px;
 	margin: 0 auto;
+	position: relative;
 }
-.section{
-	width: 100%;
-	height: 100%;
-}
-.info{
+
+/*特殊部位样式*/
+.section-header{
 	text-align: center;
 }
+.section-main{
+	text-align: center;
+}
+.section-footer{
+	font-size: 14px;
+	text-align: center;
+	margin-top: 100px;
+}
+
+/*信息窗口*/
 .getMsg{
-	border：soild 1px;
-	width: 100px;
-	height: 100px;
+	overflow: auto;/*信息过多时自动出现滚动条*/
+	border: 1px solid;
+	width: 100%;
+	height: 500px;
+	background-color: gray;
+	margin-bottom: 10px;
 }
 .sendMsg{
-	border：soild 1px;
+	border: 1px solid;
 	width: 100%;
-	height: 50px;
+	height: 200px;
+	background-color: gray;
 }
+
+/*发送窗口*/
 #msg{
-	width: 100px;
-	height: 50px;
-	margin: 0 auto;
+	border: 0;
+	width: 99.6%;
+	height: 98%;
+}
+
+/*按钮*/
+#btn{
+	margin-top: 2%;
+	float: right;
+	width: 20%;
+	height: 20%;
 }
