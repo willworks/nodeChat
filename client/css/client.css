@@ -44,7 +44,22 @@ textarea{resize:none}
 	height: 200px;
 	background-color: gray;
 }
-
+.loginWrapper{
+	font-size: 20px;
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(5, 5, 5, .6);
+    text-align: center;
+    color: #fff;
+    display: block;
+    padding-top: 250px;
+}
+#login{
+	display: none;
+}
 /*发送窗口*/
 #msg{
 	border: 0;

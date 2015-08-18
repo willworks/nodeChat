@@ -39,6 +39,8 @@
     <meta name="format-detection" content="telephone=no,email=no" />
 
     <!--==============================引入外部CSS以及需要预先加载的js===================================-->
+    <!-- 去除浏览器默认样式 -->
+    <link rel="stylesheet" type="text/css" href="css/reset.css" />
     <link rel="stylesheet" type="text/css" href="css/client.css" />
 
 </head>
@@ -65,9 +67,9 @@
     <div class="section-wrap section-main">
         <div class="section">
             <div class="getMsg">
-<!--                 <ul>
+                <ul>
                     <li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li>
-                </ul> -->
+                </ul>
             </div>
             <div class="sendMsg">
                 <textarea id="msg"></textarea>
@@ -75,17 +77,26 @@
             </div>
         </div>
     </div>
+    <!-- 版权信息 -->
     <div class="section-wrap section-footer">
         <div class="section">
-            <p class="info">Copyright © <a href="https://github.com/willworks/nodeChat" target="_Blank">willworks</a> 2015 All Right Reserved</p>
+            <p class="info">Copyright © <a href="https://github.com/willworks/nodeChat" target="_Blank">Kevin.Zhong</a> 2015 All Right Reserved</p>
         </div>
     </div>
-    
+
+    <!-- 登陆前的遮罩层 -->
+    <div class="section-wrap loginWrapper">
+        <p id="wait">Connecting to server...</p>
+        <div class="section" id="login">
+            <input type="text" placeHolder="name" id="name" />
+            <input type="button" value="ok" id="loginBtn" />
+        </div>
+    </div>
     <!--=================引入外部js，由于加载js时阻塞页面渲染，故置于body底部===========================-->
     <!-- 引入socket.io -->
     <script src="/socket.io/socket.io.js"></script>
-    <!-- 引入jQuery -->
-    <script src="/js/client.js"></script>
+    <!-- 引入客户端js程序 -->
+    <script src="js/client.js"></script>
 </body>
 <!-- END body -->
 </html>
