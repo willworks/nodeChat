@@ -58,22 +58,40 @@ app.get('/', function(req, res){
 
 // 初始化一个socket connection : io.on('connection',function(socket){});
 io.on('connection', function(socket){
+
 	// 监听login事件
 	socket.on('login', function(userName){
 		if(users.indexOf(userName) > -1){
-			//将已存在用户名的信息回复给客户端
+			// 将已存在用户名的信息回复给客户端
 			socket.emit('nameExisted');
 		}
 		else{
-			//将用户名保存在users[]数组里
+			// 将用户名保存在users[]数组里
 			socket.userIndex = users.length;
 		    socket.userName = userName;
 		    users.push(userName);
+		    // 将登陆成功事件发送到客户端
 		    socket.emit('loginSuccess');
-		    console.log(userName);
-		    //前边加上了io. 表示对象为全局，向所有连接到服务器的客户端发送当前登陆用户的昵称 
-		    io.sockets.emit('system', userName); 
+		    // 调试用：用于显示接收到的用户名字 
+		    // console.log(userName);
+		    // 前边加上了io. 表示对象为全局，向所有连接到服务器的客户端发送当前登陆用户的名字
+		    io.sockets.emit('system', userName, users.length, 'login'); 
 		}
+	});
+
+	// 监听到断开连接的事件
+	socket.on('disconnect', function() {
+	    // 将断开连接的用户从users中删除
+	    users.splice(socket.userIndex, 1);
+	    // 通知除自己以外的所有人
+	    socket.broadcast.emit('system', socket.userName, users.length, 'logout');
+	});
+
+	// 监听客户端发送窗口消息事件，并且发送到全局
+	socket.on('message',function(userMsg){
+		// 调试用：用于显示来自客户端的信息
+		// console.log(userMsg);
+		io.sockets.emit('chat', userMsg);
 	});
 });
 
