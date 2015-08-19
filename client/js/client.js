@@ -1,6 +1,48 @@
+/** 
+    Document   : nodeChat
+    Created on : 2015.8
+    Author     : Kevin Zhong
+    License    : MIT
+    github     : https://github.com/willworks/nodeChat/ 
+    Description: 基于node和socket.io的网页版即时聊天程序
+    Copyright (c) 2015 Kevin Zhong
+*/
 /**
 发送事件的代码为：socket.emit(action, data, function)，其中action为事件的名称，data为数据，function为回调函数;
 处理事件代码 为：socket.on(action,function)，如果emit发送的时候有数据data，则function中参数包含了这个数据。
+socket.io客户端常用函数
+    var socket = io.connect(host,options);
+        io.on
+
+        当socket与后端成功建立链接后
+        -> connect : socket.on('connect',function(){});
+
+        socket正在与服务器建立链接
+        -> connecting : socket.on('connecting',function(){});
+
+        当与服务器断开链接s
+        -> disconnect : socket.on('disconnect',function(){});
+
+        与服务器链接失败
+        -> connect_failed : socket.on('connect_failed',function(){});
+
+        当一个错误发生而且不能被处理
+        -> error : socket.on('error',function(){});
+
+        通过send方法发送到服务器端，并且被服务器接受并返回到客户端接受后处理的数据
+        -> message : socket.on('message',function(message,[callback]){});
+
+        可以是任意事件，除了保留的事件之外
+        -> anything : socket.on('anything',function(data,[callback]){});
+
+        socket再次链接失败
+        -> reconnect_failed : socket.on('reconnect_failed',function(){});
+
+        重新链接并且成功
+        -> reconnect : socket.on('reconnect',function(){});
+
+        重新链接还在链接中..
+        -> reconnecting : socket.on('reconnecting',function{});
 */
 
 // 页面内包括图片的所有元素加载完毕后执行nodeChat实例化和初始化
@@ -68,12 +110,9 @@ nodeChat.prototype = {
 		//显示昵称被占用的提示
 			loginWrapper.style.display= 'none';
 			msg.focus();
-
-
-			信息传输，有待增加
 			//获取输入框信息并且随事件发送到服务器
-			// var userMsg = msg.value;
-			// that.socket.emit("message",userMsg);
+			var userMsg = msg.value;
+			that.socket.emit("message",userMsg);
 		});
     }
 };

@@ -1,6 +1,30 @@
+/** 
+    Document   : nodeChat
+    Created on : 2015.8
+    Author     : Kevin Zhong
+    License    : MIT
+    github     : https://github.com/willworks/nodeChat/ 
+    Description: 基于node和socket.io的网页版即时聊天程序
+    Copyright (c) 2015 Kevin Zhong
+*/
 /**
 发送事件的代码为：socket.emit(action, data, function)，其中action为事件的名称，data为数据，function为回调函数;
 处理事件代码 为：socket.on(action,function)，如果emit发送的时候有数据data，则function中参数包含了这个数据。
+socket.io服务器端常用函数
+  var io = require('socket.io');
+        io.on
+
+        初始化一个socket
+        ->connection : io.on('connection',function(socket){});
+
+        接受客户端send()方法发送过来服务器的数据
+        ->message : io.on('message',function(message,callback){});
+
+        除了库保留的事件外任意自定义事件
+        ->anything : io.on('anything',function(data){});
+
+        中端socket链接
+        ->disconnect : io.on('disconnect',function(){});
 */
 
 /**
