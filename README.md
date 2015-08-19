@@ -40,3 +40,61 @@
 
  - 安装node-gyp编译必须的环境python (必须是2.7.X)  
  - Visual Studio (不一定是错误提示里的2005)，并且强制指定：npm config set msvs_version 2012 --global  
+
+---
+
+# Usage  
+
+## client  
+
+		var socket = io.connect(host,options);
+			io.on
+
+			当socket与后端成功建立链接后
+			-> connect : socket.on('connect',function(){});
+
+			socket正在与服务器建立链接
+			-> connecting : socket.on('connecting',function(){});
+
+			当与服务器断开链接s
+			-> disconnect : socket.on('disconnect',function(){});
+
+			与服务器链接失败
+			-> connect_failed : socket.on('connect_failed',function(){});
+
+			当一个错误发生而且不能被处理
+			-> error : socket.on('error',function(){});
+
+			通过send方法发送到服务器端，并且被服务器接受并返回到客户端接受后处理的数据
+			-> message : socket.on('message',function(message,[callback]){});
+
+			可以是任意事件，除了保留的事件之外
+			-> anything : socket.on('anything',function(data,[callback]){});
+
+			socket再次链接失败
+			-> reconnect_failed : socket.on('reconnect_failed',function(){});
+
+			重新链接并且成功
+			-> reconnect : socket.on('reconnect',function(){});
+
+			重新链接还在链接中..
+			-> reconnecting : socket.on('reconnecting',function{});
+
+ 
+
+## server  
+
+		var io = require('socket.io');
+			io.on
+
+			初始化一个socket
+			->connection : io.on('connection',function(socket){});
+
+			接受客户端send()方法发送过来服务器的数据
+			->message : io.on('message',function(message,callback){});
+
+			除了库保留的事件外任意自定义事件
+			->anything : io.on('anything',function(data){});
+
+			中端socket链接
+			->disconnect : io.on('disconnect',function(){});

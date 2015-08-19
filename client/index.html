@@ -66,13 +66,10 @@
     </div>
     <div class="section-wrap section-main">
         <div class="section">
-            <div class="getMsg">
-                <ul>
-                    <li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li><li>23123</li>
-                </ul>
-            </div>
+            <div class="getMsg"></div>
             <div class="sendMsg">
-                <textarea id="msg"></textarea>
+                <!-- autocomplete="off" 关闭表单自动填充 -->
+                <textarea id="msg" autocomplete="off"></textarea>
                 <input id="btn" type="button" value="send" />
             </div>
         </div>
@@ -85,7 +82,7 @@
     </div>
 
     <!-- 登陆前的遮罩层 -->
-    <div class="section-wrap loginWrapper">
+    <div class="section-wrap loginWrapper" id="loginWrapper">
         <p id="wait">Connecting to server...</p>
         <div class="section" id="login">
             <input type="text" placeHolder="name" id="name" />
