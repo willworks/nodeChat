@@ -47,7 +47,6 @@ io.on('connection', function(socket){
 		    users.push(userName);
 		    socket.emit('loginSuccess');
 		    console.log(userName);
-		    
 		    //前边加上了io. 表示对象为全局，向所有连接到服务器的客户端发送当前登陆用户的昵称 
 		    io.sockets.emit('system', userName); 
 		}
