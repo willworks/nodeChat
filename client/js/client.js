@@ -157,5 +157,14 @@ nodeChat.prototype = {
             p.textContent = userMsg;
             document.getElementById('getMsg').appendChild(p);
         });
+
+
+        // 按键检测，即enter按键发送信息
+        // var e=event.srcElement; 
+        // if(event.keyCode==13){ 
+        //     document.getElementById('send').click(); 
+        //     return false; 
+        // } 
+
     }
 };
