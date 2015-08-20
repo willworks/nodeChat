@@ -125,7 +125,7 @@ nodeChat.prototype = {
                 // 将发送窗口清空
                 msg.value = '';
             }
-            // 情况聊天窗口
+            // 清空聊天窗口
             clear.onclick = function(){
                 var elm = document.getElementById('getMsg');
                 while(elm.firstChild){ // 判断是否有子节点,如果有，则默认删除第一个子节点，直到全部清空
@@ -159,12 +159,30 @@ nodeChat.prototype = {
         });
 
 
-        // 按键检测，即enter按键发送信息
-        // var e=event.srcElement; 
-        // if(event.keyCode==13){ 
-        //     document.getElementById('send').click(); 
-        //     return false; 
-        // } 
+        /**按键检测，将按键事件绑定到msg信息发送窗口，只要检测到键盘按键按下，就触发事件
+        msg.onkeydown = function(){
+        	alert('hello');
+        }
+        */
+        // 点击就即enter按键发送信息
+        msg.onkeydown = function(){
+        	var e = e || window.event; 
+        	var keycode = e.which ? e.which : e.keyCode; 
+        	if(keycode == 13 || keycode == 108){
+        		send.click();
+        		this.value = '';
+        	}
+        }
+
+        // enter发送名字到服务器
+        name.onkeydown = function(){
+        	var e = e || window.event; 
+        	var keycode = e.which ? e.which : e.keyCode; 
+        	if(keycode == 13 || keycode == 108){
+        		btn.click();
+        		this.value = '';
+        	}
+        }
 
     }
 };
