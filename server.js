@@ -92,6 +92,8 @@ io.on('connection', function(socket){
 		// 调试用：用于显示来自客户端的信息
 		// console.log(userMsg);
 		io.sockets.emit('chat', userMsg);
+		// 后台检测消息，用于存储
+		console.log(userMsg);
 	});
 });
 
