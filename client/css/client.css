@@ -64,8 +64,8 @@ textarea{resize:none}
 #msg{
 	font-size: 14px;
 	border: 0;
-	width: 99.6%;
-	height: 98%;
+	width: 100%;
+	height: 100%;
 }
 
 /*发送按钮*/
