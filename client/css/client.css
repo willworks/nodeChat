@@ -68,8 +68,8 @@ textarea{resize:none}
 	height: 98%;
 }
 
-/*按钮*/
-#btn{
+/*发送按钮*/
+#btn,#clear{
 	margin-top: 2%;
 	float: right;
 	width: 20%;

@@ -70,7 +70,8 @@ nodeChat.prototype = {
         var name = document.getElementById('name');
         var btn = document.getElementById('loginBtn');
 		var loginWrapper = document.getElementById('loginWrapper');
-		var send = document.getElementById('btn');
+		var send = document.getElementById('btn'); // 发送按钮
+        var clear = document.getElementById('clear'); // 清空按钮
 		var msg = document.getElementById('msg');
 
         // 建立到服务器的socket连接
@@ -123,6 +124,13 @@ nodeChat.prototype = {
                 that.socket.emit('message', userMsg); 
                 // 将发送窗口清空
                 msg.value = '';
+            }
+            // 情况聊天窗口
+            clear.onclick = function(){
+                var elm = document.getElementById('getMsg');
+                while(elm.firstChild){ // 判断是否有子节点,如果有，则默认删除第一个子节点，直到全部清空
+                    elm.removeChild(elm.firstChild);
+                }
             }
 		});
 
