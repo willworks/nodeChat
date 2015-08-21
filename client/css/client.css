@@ -45,9 +45,10 @@ textarea{resize:none}
 	text-align: left;
 }
 .sendMsg{
+	font-size: 16px;
 	border: 1px solid;
 	width: 100%;
-	height: 200px;
+	height: 40px;
 	background-color: gray;
 }
 .loginWrapper{
@@ -76,10 +77,10 @@ textarea{resize:none}
 
 /*发送按钮*/
 #btn,#clear{
-	margin-top: 2%;
+	margin-top: 1%;
 	float: right;
-	width: 20%;
-	height: 20%;
+	width: 10%;
+	height: 100%;
 }
 #loginBtn{
 	margin-top: 2%;

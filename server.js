@@ -94,7 +94,8 @@ io.on('connection', function(socket){
 		// socket.userName将用户名加入到信息内，以便于后期作为区分
 		io.sockets.emit('chat', socket.userName, userMsg);
 		// 后台检测消息，用于存储
-		console.log(socket.userName + userMsg);
+		var time = new Date();
+		console.log(socket.userName + ' [' + time + '] ' + userMsg);
 	});
 });
 
