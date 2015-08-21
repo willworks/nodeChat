@@ -73,7 +73,7 @@ nodeChat.prototype = {
 		var send = document.getElementById('btn'); // 发送按钮
         var clear = document.getElementById('clear'); // 清空按钮
 		var msg = document.getElementById('msg');
-
+        var getMsg = document.getElementById('getMsg');
         // 建立到服务器的socket连接
         this.socket = io.connect();
 
@@ -156,10 +156,12 @@ nodeChat.prototype = {
             // 创建新的子代，显示聊天信息
             var p = document.createElement('p');
             var time = new Date();
-            // 调试用：输出当前时间
+            // 调试用：控制台输消息发送时间
             // console.log(time);
-            p.textContent = name + ' [' + time + '] ' + userMsg;
+            p.textContent = name + '[' + time + ']' + userMsg;
             document.getElementById('getMsg').appendChild(p);
+            // 滚动条一直默认滚动到底部，显示最新聊天信息
+            getMsg.scrollTop = getMsg.scrollHeight; 
         });
 
 

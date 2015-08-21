@@ -33,6 +33,7 @@ textarea{resize:none}
 /*聊天信息窗口*/
 .getMsg{
 	overflow: auto;/*信息过多时自动出现滚动条*/
+	overflow-x: hidden;/*禁止横向滚动*/
 	border: 1px solid;
 	width: 100%;
 	height: 500px;
