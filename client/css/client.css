@@ -37,7 +37,7 @@ textarea{resize:none}
 	border: 1px solid;
 	width: 100%;
 	height: 500px;
-	background-color: gray;
+	/*background-color: gray;*/
 	margin-bottom: 10px;
 }
 
@@ -89,4 +89,10 @@ textarea{resize:none}
 }
 #name{
 	margin-top: 2%;
+}
+#userNum{
+	margin: 3%;
+}
+.section-header .info{
+	font-size: 4rem;
 }
