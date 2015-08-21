@@ -91,9 +91,10 @@ io.on('connection', function(socket){
 	socket.on('message',function(userMsg){
 		// 调试用：用于显示来自客户端的信息
 		// console.log(userMsg);
-		io.sockets.emit('chat', userMsg);
+		// socket.userName将用户名加入到信息内，以便于后期作为区分
+		io.sockets.emit('chat', socket.userName, userMsg);
 		// 后台检测消息，用于存储
-		console.log(userMsg);
+		console.log(socket.userName + userMsg);
 	});
 });
 

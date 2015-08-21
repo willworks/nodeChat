@@ -149,12 +149,13 @@ nodeChat.prototype = {
          });
 
         // 处理服务器回调的所有聊天信息
-        this.socket.on('chat', function(userMsg){
+        // name从服务器端传来用户名参数
+        this.socket.on('chat', function(name, userMsg){
             // 调试用：控制台输出显示聊天信息
             // console.log(userMsg);
             // 创建新的子代，显示聊天信息
             var p = document.createElement('p');
-            p.textContent = userMsg;
+            p.textContent = name + userMsg;
             document.getElementById('getMsg').appendChild(p);
         });
 
