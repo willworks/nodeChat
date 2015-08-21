@@ -158,7 +158,7 @@ nodeChat.prototype = {
             var time = new Date();
             // 调试用：控制台输消息发送时间
             // console.log(time);
-            p.textContent = name + '[' + time + ']' + userMsg;
+            p.textContent = name + ' [' + time + '] ' + ': ' + userMsg;
             document.getElementById('getMsg').appendChild(p);
             // 滚动条一直默认滚动到底部，显示最新聊天信息
             getMsg.scrollTop = getMsg.scrollHeight; 
