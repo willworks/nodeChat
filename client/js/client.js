@@ -155,7 +155,10 @@ nodeChat.prototype = {
             // console.log(userMsg);
             // 创建新的子代，显示聊天信息
             var p = document.createElement('p');
-            p.textContent = name + userMsg;
+            var time = new Date();
+            // 调试用：输出当前时间
+            // console.log(time);
+            p.textContent = name + ' [' + time + '] ' + userMsg;
             document.getElementById('getMsg').appendChild(p);
         });
 

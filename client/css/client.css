@@ -5,6 +5,7 @@ html{
 input,button,select,textarea{outline:none}
 textarea{resize:none}
 
+
 .section-wrap {
 	position: relative;
 }
@@ -29,7 +30,7 @@ textarea{resize:none}
 	margin-top: 100px;
 }
 
-/*信息窗口*/
+/*聊天信息窗口*/
 .getMsg{
 	overflow: auto;/*信息过多时自动出现滚动条*/
 	border: 1px solid;
@@ -37,6 +38,11 @@ textarea{resize:none}
 	height: 500px;
 	background-color: gray;
 	margin-bottom: 10px;
+}
+
+/*消息全部靠右对齐显示*/
+.getMsg p{
+	text-align: left;
 }
 .sendMsg{
 	border: 1px solid;
@@ -74,4 +80,11 @@ textarea{resize:none}
 	float: right;
 	width: 20%;
 	height: 20%;
+}
+#loginBtn{
+	margin-top: 2%;
+	width: 6%;
+}
+#name{
+	margin-top: 2%;
 }
