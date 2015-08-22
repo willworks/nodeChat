@@ -44,6 +44,7 @@ textarea{resize:none}
 /*消息全部靠右对齐显示*/
 .getMsg p{
 	text-align: left;
+	padding: .4rem;
 }
 .sendMsg{
 	font-size: 16px;
@@ -68,6 +69,10 @@ textarea{resize:none}
 #login{
 	display: none;
 }
+#name, #loginBtn{
+	width: 10%;
+	height: 10%;
+}
 /*发送窗口*/
 #msg{
 	font-size: 14px;
@@ -77,7 +82,7 @@ textarea{resize:none}
 }
 
 /*发送按钮*/
-#btn,#clear{
+#btn, #clear{
 	margin-top: 1%;
 	float: right;
 	width: 10%;
