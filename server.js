@@ -47,7 +47,11 @@ var express = require('express');
 var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
-var users=[];//保存所有在线用户的名称
+var fs = require('fs');// node文件操作板块
+var users=[];// 保存所有在线用户的名称
+var time;// 当前时间变量声明
+var tmpMsg;// 聊天信息声明
+
 
 // 设置静态资源获取路径
 app.use('/', express.static(__dirname + '/client'));
@@ -94,8 +98,26 @@ io.on('connection', function(socket){
 		// socket.userName将用户名加入到信息内，以便于后期作为区分
 		io.sockets.emit('chat', socket.userName, userMsg);
 		// 后台检测消息，用于存储
-		var time = new Date();
-		console.log(socket.userName + ' [' + time + '] ' + userMsg);
+		time = new Date();
+		// 保存聊天信息到变量
+		tmpMsg = socket.userName + ' [' + time + '] ' + userMsg + '\n';
+
+		// 将聊天信息保存到文件
+		// 文件写入操作
+		fs.open('msg', 'a', 0644, function(err,fd){
+			if (err) {
+				throw err;
+			}
+			else{
+				fs.write(fd, tmpMsg, function(err){
+					if (err){
+						throw err;
+					}
+					// 服务器只要处于监听状态，就一直是可以写入
+					// fs.closeSync('fd');
+				});
+			}
+		});
 	});
 });
 
