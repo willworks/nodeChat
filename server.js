@@ -118,6 +118,7 @@ io.on('connection', function(socket){
 				});
 			}
 		});
+		// END 保存聊天信息
 	});
 });
 
