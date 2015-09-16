@@ -50,16 +50,16 @@
 		var socket = io.connect(host,options);
 			io.on
 
-			当socket与后端成功建立链接后
+			当socket与后端成功建立连接后
 			-> connect : socket.on('connect',function(){});
 
-			socket正在与服务器建立链接
+			当socket正在与服务器建立连接
 			-> connecting : socket.on('connecting',function(){});
 
-			当与服务器断开链接s
+			当与服务器断开连接
 			-> disconnect : socket.on('disconnect',function(){});
 
-			与服务器链接失败
+			当与服务器连接失败
 			-> connect_failed : socket.on('connect_failed',function(){});
 
 			当一个错误发生而且不能被处理
@@ -71,13 +71,13 @@
 			可以是任意事件，除了保留的事件之外
 			-> anything : socket.on('anything',function(data,[callback]){});
 
-			socket再次链接失败
+			socket再次连接失败
 			-> reconnect_failed : socket.on('reconnect_failed',function(){});
 
-			重新链接并且成功
+			重新连接并且成功
 			-> reconnect : socket.on('reconnect',function(){});
 
-			重新链接还在链接中..
+			重新连接还在连接中..
 			-> reconnecting : socket.on('reconnecting',function{});
 
  
@@ -96,5 +96,5 @@
 			除了库保留的事件外任意自定义事件
 			->anything : io.on('anything',function(data){});
 
-			中端socket链接
+			中断socket连接
 			->disconnect : io.on('disconnect',function(){});
