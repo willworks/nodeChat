@@ -43,12 +43,15 @@ server.listen(80);
 console.log('server is listening port:80');
 */
 
+// 模块引入
 var express = require('express'),
     app = express(),
     http = require('http').Server(app),
     io = require('socket.io')(http),
-    fs = require('fs'),// node文件操作板块
-    users=[],// 保存所有在线用户的名称
+    fs = require('fs');// node文件操作板块
+
+// 变量声明
+var users=[],// 保存所有在线用户的名称
     time,// 当前时间变量声明
     tmpMsg;// 聊天信息声明
 
