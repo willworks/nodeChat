@@ -44,13 +44,13 @@ console.log('server is listening port:80');
 */
 
 var express = require('express'),
-	app = express(),
-	http = require('http').Server(app),
-	io = require('socket.io')(http),
-	fs = require('fs'),// node文件操作板块
-	users=[],// 保存所有在线用户的名称
-	time,// 当前时间变量声明
-	tmpMsg;// 聊天信息声明
+    app = express(),
+    http = require('http').Server(app),
+    io = require('socket.io')(http),
+    fs = require('fs'),// node文件操作板块
+    users=[],// 保存所有在线用户的名称
+    time,// 当前时间变量声明
+    tmpMsg;// 聊天信息声明
 
 
 // 设置静态资源获取路径
